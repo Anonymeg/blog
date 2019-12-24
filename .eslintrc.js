@@ -1,7 +1,8 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
+    jquery: true
   },
   'extends': [
     'plugin:vue/essential',
@@ -9,8 +10,22 @@ module.exports = {
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'space-before-function-paren': 0,
+    "vue/script-indent": ["error", 2, {  // script标签缩进设置
+      "baseIndent": 1,
+      "switchCase": 0,
+      "ignores": []
+    }]
   },
+  overrides: [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off",
+      }
+    }
+  ],
   parserOptions: {
     parser: 'babel-eslint'
   }
